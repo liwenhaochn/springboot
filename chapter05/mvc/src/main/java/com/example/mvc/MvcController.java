@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MvcController {
 
     @RequestMapping("/hello")
-    public String hello(Model model){
+    public String hello(Model model) throws Exception {
         model.addAttribute("var", "Hello, SpringBoot!!!");
         return "view";
     }
