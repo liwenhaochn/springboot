@@ -1,0 +1,6 @@
+server:
+  port: 8003
+
+  banner:
+    image:
+      location: banner.txt

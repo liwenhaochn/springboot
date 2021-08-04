@@ -1,0 +1,9 @@
+server:
+  port: 8003
+
+spring:
+  banner:
+    image:
+      location: banner.txt
+  main:
+    banner-mode: log
