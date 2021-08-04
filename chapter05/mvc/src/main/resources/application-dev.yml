@@ -7,6 +7,17 @@ spring:
       location: banner.txt
   main:
     banner-mode: log
+  thymeleaf:
+    mode: HTML5
+    encoding: UTF-8
+    cache: false
+    servlet:
+      content-type: text/html
+  output:
+    ansi:
+      enabled: always
+
+
 
 name: liwenhao
 age: 30
