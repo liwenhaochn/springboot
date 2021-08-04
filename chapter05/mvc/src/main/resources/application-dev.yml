@@ -1,0 +1,19 @@
+server:
+  port: 8005
+
+spring:
+  banner:
+    image:
+      location: banner.txt
+  main:
+    banner-mode: log
+
+name: liwenhao
+age: 30
+
+partner:
+  name: chenyijun
+  age: 26
+  address[0]: 北京
+  address[1]: 广州
+  address[2]: 上海
