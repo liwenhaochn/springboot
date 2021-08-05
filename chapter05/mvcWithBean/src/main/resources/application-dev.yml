@@ -1,0 +1,13 @@
+server:
+  port: 8005
+
+
+spring:
+  thymeleaf:
+    mode: HTML5
+    encoding: UTF-8
+    cache: false
+    servlet:
+      content-type: text/html
+  main:
+    banner-mode: off

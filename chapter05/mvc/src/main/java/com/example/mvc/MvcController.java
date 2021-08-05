@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MvcController {
 
-    @RequestMapping("/hello")
+    @RequestMapping("/mvc")
     public String hello(Model model) throws Exception {
         model.addAttribute("var","hello,Spring MVC!");
         return "view";
