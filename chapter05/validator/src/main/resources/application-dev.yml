@@ -1,0 +1,14 @@
+server:
+  port: 8005
+
+
+spring:
+  thymeleaf:
+    # 书上的不对，这里不能用HTML5
+    mode: HTML
+    encoding: UTF-8
+    cache: false
+    servlet:
+      content-type: text/html
+  main:
+    banner-mode: log
