@@ -22,6 +22,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--热部署，修改controller的方法体，无需重启应用即可访问修改后的结果-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
