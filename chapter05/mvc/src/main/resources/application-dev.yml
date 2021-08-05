@@ -1,30 +1,13 @@
 server:
   port: 8005
 
+
 spring:
-  banner:
-    image:
-      location: banner.txt
-  main:
-    banner-mode: log
   thymeleaf:
-    mode: HTML5
+    mode: HTML
     encoding: UTF-8
     cache: false
     servlet:
       content-type: text/html
-  output:
-    ansi:
-      enabled: always
-
-
-
-name: liwenhao
-age: 30
-
-partner:
-  name: chenyijun
-  age: 26
-  address[0]: 北京
-  address[1]: 广州
-  address[2]: 上海
+  main:
+    banner-mode: off
