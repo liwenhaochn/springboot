@@ -4,7 +4,8 @@ server:
 
 spring:
   thymeleaf:
-    mode: HTML5
+    # 书上的不对，这里不能用HTML5
+    mode: HTML
     encoding: UTF-8
     cache: false
     servlet:
