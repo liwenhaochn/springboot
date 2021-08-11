@@ -10,7 +10,8 @@ public class MyUserConstraintValidator implements ConstraintValidator<MyUserCons
 
     @Override
     public void initialize(MyUserConstraint constraintAnnotation) {
-        System.out.println("initialize");;
+        System.out.println("initialize");
+        ;
     }
 
     @Override

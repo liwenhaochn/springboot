@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class MvcWithBeanController {
 
     @GetMapping("/mvcWithBean")
-    public ModelAndView mvcWithBean(){
+    public ModelAndView mvcWithBean() {
         User user = new User();
         user.setAge(29);
         user.setName("liwenhao");

@@ -13,21 +13,21 @@ import javax.validation.Valid;
 public class ValidatorController {
 
     @GetMapping("/test")
-    public String showForm(User user){
+    public String showForm(User user) {
         return "form";
     }
 
     @GetMapping("/results")
-    public String results(){
+    public String results() {
         return "results";
     }
 
     @PostMapping("/test")
-    public String checkUser(@Valid User user, BindingResult bindingResult, RedirectAttributes redirectAttributes){
-        if(bindingResult.hasErrors()){
+    public String checkUser(@Valid User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+        if (bindingResult.hasErrors()) {
             return "form";
         }
-        redirectAttributes.addFlashAttribute("user",user);
+        redirectAttributes.addFlashAttribute("user", user);
         return "redirect:/results";
     }
 }

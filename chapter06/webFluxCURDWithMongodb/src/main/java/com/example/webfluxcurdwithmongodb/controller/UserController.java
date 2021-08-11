@@ -35,11 +35,13 @@ public class UserController {
                 .map(getUser -> ResponseEntity.ok(getUser))
                 .defaultIfEmpty(ResponseEntity.notFound().build());
     }
+
     /*创建用户*/
     @PostMapping("")
     public Mono<User> createUser(@Valid User user) {
         return userRepository.save(user);
     }
+
     /*更新用户*/
     @PutMapping("/{id}")
     public Mono updateUser(@PathVariable String id, @Valid User user) {
@@ -52,6 +54,7 @@ public class UserController {
                 }).map(update -> new ResponseEntity<>(update, HttpStatus.OK))
                 .defaultIfEmpty(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
+
     /*删除用户*/
     @DeleteMapping("/{id}")
     public Mono<ResponseEntity<Void>> deleteUser(@PathVariable(value = "id") String id) {

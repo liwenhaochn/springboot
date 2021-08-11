@@ -12,6 +12,8 @@ import java.lang.annotation.Target;
 @Constraint(validatedBy = MyUserConstraintValidator.class)
 public @interface MyUserConstraint {
     String message() default "请输入正确的出生城市名";
+
     Class<?>[] groups() default {};
+
     Class<? extends Payload>[] payload() default {};
 }

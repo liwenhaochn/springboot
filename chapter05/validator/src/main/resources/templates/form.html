@@ -10,27 +10,27 @@
         color: red
     }
 </style>
-<form th:action="@{/test}" th:object="${user}" method="post">
+<form method="post" th:action="@{/test}" th:object="${user}">
     <div>
         <div>
             <span>姓名：</span>
-            <span><input type="text" th:field="*{name}"/></span>
-            <span class="warn" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">名字错误</span>
+            <span><input th:field="*{name}" type="text"/></span>
+            <span class="warn" th:errors="*{name}" th:if="${#fields.hasErrors('name')}">名字错误</span>
         </div>
         <div>
             <span>年龄：</span>
-            <span><input type="number" th:field="*{age}"/></span>
-            <span class="warn" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">年龄错误</span>
+            <span><input th:field="*{age}" type="number"/></span>
+            <span class="warn" th:errors="*{age}" th:if="${#fields.hasErrors('age')}">年龄错误</span>
         </div>
         <div>
             <span>邮箱：</span>
-            <span><input type="text" th:field="*{email}"/></span>
-            <span class="warn" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">邮箱错误</span>
+            <span><input th:field="*{email}" type="text"/></span>
+            <span class="warn" th:errors="*{email}" th:if="${#fields.hasErrors('email')}">邮箱错误</span>
         </div>
         <div>
             <span>城市</span>
-            <span><input type="text" th:field="*{city}"/></span>
-            <span class="warn" th:if="${#fields.hasErrors('city')}" th:errors="*{city}">城市错误</span>
+            <span><input th:field="*{city}" type="text"/></span>
+            <span class="warn" th:errors="*{city}" th:if="${#fields.hasErrors('city')}">城市错误</span>
         </div>
         <div>
       <span>
