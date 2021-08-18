@@ -26,6 +26,16 @@ import java.util.List;
 public class UserFuncImplTest {
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private UserFuncImpl userFunc;
+
+
+    @Test
+    public void userFuncTest(){
+        System.out.println(userFunc.getAllUser());
+        System.out.println(userFunc.getUserByIdName("990007", "liwenhao"));
+        System.out.println(userFunc.getUserById("990008"));
+    }
 
     @Test
     public void getAllUserTest() {
@@ -52,5 +62,11 @@ public class UserFuncImplTest {
         userList.add(user1);
 
         userDao.saveAll(userList);
+    }
+
+    @Test
+    public void getUserByIdNameTest(){
+        User user = userDao.getByIdAndName("990007", "liwenhao");
+        System.out.println(user.toString());
     }
 }
