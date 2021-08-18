@@ -17,9 +17,11 @@ public class UserServiceTest {
 
     @Test
     public void getUserInfo() {
-        User user = userService.getUserInfo("liwenhao", 30);
+        User user = userService.getUserInfo("990001", "liwenhao", 30);
+        Assert.assertEquals(user.getId(), "990001");
         Assert.assertEquals(user.getAge(), 30);
         Assert.assertEquals(user.getName(), "liwenhao");
+        System.out.println(user.toString());
     }
 
 }

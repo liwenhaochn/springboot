@@ -1,2 +1,17 @@
 server:
   port: 8007
+spring:
+  datasource:
+    #    url: jdbc:mysql://127.0.0.1:3306/oibsdb?userUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&USERssl=true
+    url: jdbc:mysql://127.0.0.1:3306/oibsdb
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  # 设置jap参数
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  # 设置thymeleaf不缓存
+  thymeleaf:
+    cache: true
