@@ -7,11 +7,3 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
-  # 设置jap参数
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: update
-  # 设置thymeleaf不缓存
-  thymeleaf:
-    cache: true
