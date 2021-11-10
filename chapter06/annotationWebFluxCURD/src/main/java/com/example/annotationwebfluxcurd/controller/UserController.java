@@ -51,6 +51,9 @@ public class UserController {
 
     /*
      * 修改用户
+     *
+     * 这里如果是修改id，那么users会新增一对key-value，如果修改name和age，则是修改旧的key-value
+     *
      * */
     @PutMapping("/{id}")
     public Mono<ResponseEntity<User>> amendUser(@PathVariable Long id, User user) {

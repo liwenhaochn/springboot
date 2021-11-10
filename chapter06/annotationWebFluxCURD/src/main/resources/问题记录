@@ -1,0 +1,1 @@
+1. lombok赶紧有问题，使用@Data注解导致User类无法导入，需要手动生成getter\setter和构造函数；
