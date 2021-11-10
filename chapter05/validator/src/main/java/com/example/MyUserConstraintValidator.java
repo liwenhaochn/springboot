@@ -1,4 +1,4 @@
-package com.example.validator;
+package com.example;
 
 
 import org.apache.commons.lang.StringUtils;

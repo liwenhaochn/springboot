@@ -1,4 +1,6 @@
-package com.example.validator;
+package com.example;
+
+import com.example.MyUserConstraintValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

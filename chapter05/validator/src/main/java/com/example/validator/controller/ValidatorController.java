@@ -1,6 +1,6 @@
 package com.example.validator.controller;
 
-import com.example.validator.model.User;
+import com.example.validator.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;

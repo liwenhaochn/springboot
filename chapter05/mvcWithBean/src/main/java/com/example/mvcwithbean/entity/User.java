@@ -1,4 +1,4 @@
-package com.example.mvcwithbean.model;
+package com.example.mvcwithbean.entity;
 
 import lombok.Data;
 
