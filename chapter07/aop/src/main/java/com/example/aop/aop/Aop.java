@@ -32,7 +32,7 @@ public class Aop {
     // 定义通知advice
     @Before("pointcut()")
     public void dobefore(JoinPoint joinPoint) throws Throwable {
-        // eturns the current time in milliseconds. 毫秒
+        // returns the current time in milliseconds. 毫秒
         tic.set(System.currentTimeMillis());
         ServletRequestAttributes attributes = (ServletRequestAttributes)
                 RequestContextHolder.getRequestAttributes();
@@ -52,14 +52,14 @@ public class Aop {
     // 定义return后的通知
     @AfterReturning(pointcut = "pointcut()", returning = "returnObject")
     public void doAfterReturning(Object returnObject) throws Throwable {
-        logger.info("response:", returnObject);
-        logger.info("elapsed time:", System.currentTimeMillis() - tic.get());
+        // logger.info("response:", returnObject);
+        logger.info("AfterReturning elapsed time:", System.currentTimeMillis() - tic.get());
     }
 
     // 定义通知
     @After("pointcut()")
     public void doAfter(JoinPoint joinPoint) throws Throwable {
-        logger.info("doAfter elapsed time:", System.currentTimeMillis() - tic.get());
+        logger.info("After elapsed time:", System.currentTimeMillis() - tic.get());
     }
 
     @AfterThrowing(pointcut = "pointcut()", throwing = "exception")
