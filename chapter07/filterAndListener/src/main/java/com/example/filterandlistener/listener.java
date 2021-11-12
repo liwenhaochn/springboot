@@ -13,6 +13,6 @@ public class listener implements ServletContextListener {
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
-        System.out.println("filter contextDestroyed");
+        System.out.println("listener contextDestroyed");
     }
 }
