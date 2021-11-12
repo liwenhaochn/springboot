@@ -28,7 +28,7 @@
             <span class="warn" th:errors="*{email}" th:if="${#fields.hasErrors('email')}">邮箱错误</span>
         </div>
         <div>
-            <span>城市</span>
+            <span>城市：</span>
             <span><input th:field="*{city}" type="text"/></span>
             <span class="warn" th:errors="*{city}" th:if="${#fields.hasErrors('city')}">城市错误</span>
         </div>
