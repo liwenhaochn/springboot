@@ -22,6 +22,7 @@ public class DefineAnnotationAspect {
         System.out.println("go into before");
         MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
         Method method = methodSignature.getMethod();
+        // add by lwh 20211112 这里的红色波浪线可以忽略
         DefineAnnotation defineAnnotation = method.getAnnotation(DefineAnnotation.class);
         System.out.print("DefineAnnotation parameter:" + defineAnnotation.value());
     }

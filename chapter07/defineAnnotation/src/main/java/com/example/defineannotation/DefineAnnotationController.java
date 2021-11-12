@@ -8,6 +8,7 @@ public class DefineAnnotationController {
 
     @GetMapping("/defineAnnotation")
     @DefineAnnotation("controller")
-    public void hello(){
+    public String hello(){
+        return "define annotation!";
     }
 }
