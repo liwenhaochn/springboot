@@ -61,7 +61,6 @@ class JdbcTemplateApplicationTests {
     }
 
     public void queryAllTest(){
-        String id = "990001";
         String sql = "select * from person";
         List<Person> personList = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Person.class));
         for(Person person: personList){
