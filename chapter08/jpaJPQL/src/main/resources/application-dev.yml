@@ -7,7 +7,7 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
-# 配置jpa，会在应用启动时自动创建表
+  # 配置jpa，会在应用启动时自动创建表
   jpa:
     show-sql: true
     hibernate:
