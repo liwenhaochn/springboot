@@ -14,8 +14,9 @@ public interface UserRepository extends JpaRepository<User,String> {
 
     /*
      * jpql的原生方式，这些查询不会替换User为表名，所以必须使用实际的表名
-     *
      * 也务必使用数据库中实际的字段名
+     *
+     * ***这是因为nativeQuery的属性决定的
      *
      * */
     @Query(value = "select * from jpaNative where id=:id", nativeQuery = true)
@@ -32,6 +33,8 @@ public interface UserRepository extends JpaRepository<User,String> {
     /**
      *
      * 这里会替换User为实际的表名，字段名也会替换
+     *
+     * ***这是因为nativeQuery的属性决定的，默认为false
      *
      * @param name
      * @param age
