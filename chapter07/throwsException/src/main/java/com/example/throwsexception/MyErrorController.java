@@ -9,13 +9,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
+
 /*
-*
-* 这是一个处理错误的controller，和一般的controller不同的是，他里边的方法可以处理异常的访问，也可以处理正常的访问
-*
-* 异常----->handler----->异常
-*
-* */
+ *
+ * 这是一个处理错误的controller，和一般的controller不同的是，他里边的方法可以处理异常的访问，也可以处理正常的访问
+ *
+ * 异常----->handler----->异常
+ *
+ * */
 @RestController
 @RequestMapping("/error")
 public class MyErrorController implements ErrorController {
@@ -45,17 +46,15 @@ public class MyErrorController implements ErrorController {
     }
 
     /*
-    *
-    * 和handleError重复，优先使用的是handleError
-    * */
-    @RequestMapping(value = "", consumes = "application/xml;charset=UTF-8",produces = "text/html; charset=UTF-8")
+     * 和handleError不能并存，否则会被handleError覆盖，测试该接口时注释掉handleError
+     * */
+    @RequestMapping(value = "", consumes = "text/html;charset=UTF-8", produces = "text/html; charset=UTF-8")
     @ResponseBody
     public String errorHtml404(HttpServletRequest request, HttpServletResponse response) {
         return "404 error,not exists";
     }
 
-    @RequestMapping(value = "", consumes = "application/json;charset=UTF-8",
-            produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "", consumes = "application/json;charset=UTF-8", produces = "application/json;charset=UTF-8")
     public Map<String, Object> errorJson() {
         Map<String, Object> map = new HashMap<>();
         map.put("code", 404);
