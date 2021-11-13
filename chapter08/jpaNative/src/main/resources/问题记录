@@ -1,0 +1,2 @@
+1.jpaNative不需要repository的方法名遵循jpa的规范;
+2.查询类的必须使用实际数据库中的表名和字段名，而update和delete则可以使用entity对象的名字和变量名;
