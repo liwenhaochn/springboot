@@ -1,15 +1,15 @@
-package com.example.test.repository.impl;
+package com.example.test.service.impl;
 
-import com.example.test.dao.UserDao;
+import com.example.test.repository.UserDao;
 import com.example.test.entity.User;
-import com.example.test.repository.UserFunc;
+import com.example.test.service.UserFunc;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 /*
 * 两个注解都可以注入ioc
+* add by lwh 20211113 这里得注入到IOC
 *
 * */
 @Service
@@ -25,12 +25,12 @@ public class UserFuncImpl implements UserFunc {
 
     @Override
     public User getUserById(String id) {
-        return userDao.getById(id);
+        return userDao.findUserById(id);
     }
 
     @Override
     public User getUserByIdAndName(String id, String name) {
-        return userDao.getByIdAndName(id, name);
+        return userDao.findUserByIdAndName(id, name);
     }
 
 }

@@ -1,4 +1,4 @@
-package com.example.test.dao;
+package com.example.test.repository;
 
 import com.example.test.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -8,8 +8,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * */
 public interface UserDao extends JpaRepository<User, String> {
 
-    /* 一定要注意，这个方法的By后边要和表字段名一样，某则无法加载bean*/
-    User getById(String id);
+    /*
+     * 这里一定要注意，JPA方法的命名也要遵循一定的规范
+     */
 
-    User getByIdAndName(String id ,String name);
+    /* 一定要注意，这个方法的By后边要和表字段名一样，某则无法加载bean*/
+    User findUserById(String id);
+
+    User findUserByIdAndName(String id ,String name);
 }

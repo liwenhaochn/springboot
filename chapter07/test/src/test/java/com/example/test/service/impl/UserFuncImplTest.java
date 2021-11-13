@@ -1,7 +1,8 @@
-package com.example.test.repository.impl;
+package com.example.test.service.impl;
 
-import com.example.test.dao.UserDao;
+import com.example.test.repository.UserDao;
 import com.example.test.entity.User;
+import com.example.test.service.impl.UserFuncImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,14 +27,14 @@ public class UserFuncImplTest {
     @Autowired
     private UserDao userDao;
     @Autowired
-    private UserFuncImpl userFunc;
+    private UserFuncImpl userFuncImpl;
 
 
     @Test
     public void userFuncTest(){
-        System.out.println(userFunc.getAllUser());
-        System.out.println(userFunc.getUserByIdName("990007", "liwenhao"));
-        System.out.println(userFunc.getUserById("990008"));
+        System.out.println(userFuncImpl.getAllUser());
+        System.out.println(userFuncImpl.getUserByIdAndName("990007", "liwenhao"));
+        System.out.println(userFuncImpl.getUserById("990008"));
     }
 
     @Test
@@ -66,7 +66,7 @@ public class UserFuncImplTest {
 
     @Test
     public void getUserByIdNameTest(){
-        User user = userDao.getByIdAndName("990007", "liwenhao");
+        User user = userDao.findUserByIdAndName("990007", "liwenhao");
         System.out.println(user.toString());
     }
 }
