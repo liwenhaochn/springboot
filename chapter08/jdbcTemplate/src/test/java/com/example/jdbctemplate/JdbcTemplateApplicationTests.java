@@ -41,14 +41,17 @@ class JdbcTemplateApplicationTests {
     }
 
     public void dropTest(){
-        String sql = "drop table person";
+        // 这里存在时才drop
+        String sql = "drop table if exists person";
         jdbcTemplate.execute(sql);
+
     }
 
 
     public void createTest(){
         String sql = "CREATE TABLE `PERSON` ( `id` varchar(6) not null, `name` varchar(20) not null, `age` int(3) " +
                 "not null)";
+        System.out.println(sql);
         jdbcTemplate.execute(sql);
     }
 

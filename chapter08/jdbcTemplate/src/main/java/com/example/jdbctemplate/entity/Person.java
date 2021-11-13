@@ -3,7 +3,6 @@ package com.example.jdbctemplate.entity;
 import lombok.Data;
 import org.springframework.jdbc.core.RowMapper;
 
-import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.sql.ResultSet;
 import java.sql.SQLException;
