@@ -42,14 +42,14 @@ class JdbcTemplateApplicationTests {
 
     public void dropTest(){
         // 这里存在时才drop
-        String sql = "drop table if exists person";
+        String sql = "drop table if exists jdbcTemplate";
         jdbcTemplate.execute(sql);
 
     }
 
 
     public void createTest(){
-        String sql = "CREATE TABLE `PERSON` ( `id` varchar(6) not null, `name` varchar(20) not null, `age` int(3) " +
+        String sql = "CREATE TABLE `jdbcTemplate` ( `id` varchar(6) not null, `name` varchar(20) not null, `age` int(3) " +
                 "not null)";
         System.out.println(sql);
         jdbcTemplate.execute(sql);
@@ -57,14 +57,14 @@ class JdbcTemplateApplicationTests {
 
 
     public void saveTest(){
-        String sql = "insert into person (id,name,age) values ('990001','lidanhua','39')";
-        String sql1 = "insert into person (id,name,age) values ('990002','liwenting','37')";
+        String sql = "insert into jdbcTemplate (id,name,age) values ('990001','lidanhua','39')";
+        String sql1 = "insert into jdbcTemplate (id,name,age) values ('990002','liwenting','37')";
         jdbcTemplate.update(sql);
         jdbcTemplate.update(sql1);
     }
 
     public void queryAllTest(){
-        String sql = "select * from person";
+        String sql = "select * from jdbcTemplate";
         List<Person> personList = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Person.class));
         for(Person person: personList){
             System.out.println(person);
@@ -72,7 +72,7 @@ class JdbcTemplateApplicationTests {
     }
 
     public void queryTest(){
-        String sql = "select * from person where id=?";
+        String sql = "select * from jdbcTemplate where id=?";
         List<Person> personList = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Person.class), "990002");
         for(Person person: personList){
             System.out.println(person);
@@ -80,12 +80,12 @@ class JdbcTemplateApplicationTests {
     }
 
     public void updateTest(){
-        String sql = "update person set name=? where id=?";
+        String sql = "update jdbcTemplate set name=? where id=?";
         jdbcTemplate.update(sql, "danhua", "990001");
     }
 
     public void deleteTest(){
-        String sql = "delete from person where id = ?";
+        String sql = "delete from jdbcTemplate where id = ?";
         jdbcTemplate.update(sql,"990002");
     }
 }

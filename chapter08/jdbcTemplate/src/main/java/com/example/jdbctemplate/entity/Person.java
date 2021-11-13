@@ -1,13 +1,12 @@
 package com.example.jdbctemplate.entity;
 
-import lombok.Data;
 import org.springframework.jdbc.core.RowMapper;
 
 import javax.persistence.Id;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-@Data
+
 public class Person implements RowMapper<Person> {
 
     @Id
@@ -22,6 +21,30 @@ public class Person implements RowMapper<Person> {
         person.setName(resultSet.getString("name"));
         person.setAge(resultSet.getInt("age"));
         return person;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     /*重写toString方法，要不打出来的是哈希值*/
