@@ -48,9 +48,10 @@ class UserRepositoryTest {
         List<User> userList = userRepository.fetchAll();
         System.out.println(userList.toString());
 
-        Pageable pageable = PageRequest.of(0, 1);
+        // 这里的2个参数分别为取第几页和每页几条数据
+        Pageable pageable = PageRequest.of(0, 3);
         Page<User> userPage = userRepository.fetchUserPageByName("li", pageable);
-        System.out.println(userPage.toString());
+        System.out.println(userPage.getContent().toString());
         userRepository.updateUserAgeByName("chenyijun",24);
         user = userRepository.fetchUserById("990008");
         System.out.println(user);
