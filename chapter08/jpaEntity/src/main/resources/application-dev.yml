@@ -3,7 +3,7 @@ server:
 spring:
   datasource:
     #    url: jdbc:mysql://127.0.0.1:3306/oibsdb?userUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&UseSSL=true
-    url: jdbc:mysql://127.0.0.1:3306/oibsdb?userUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&UseSSL=true
+    url: jdbc:mysql://127.0.0.1:3306/springbootchapter08?userUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&UseSSL=true
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -11,5 +11,5 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
 
