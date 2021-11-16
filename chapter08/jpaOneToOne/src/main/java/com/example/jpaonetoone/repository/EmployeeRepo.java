@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface EmployeeRepo extends JpaRepository<Employee, Long> {
 
-//    Employee findById(long id);
+    Employee findById(long id);
 
     Employee deleteById(long id);
 }

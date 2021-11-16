@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CardRepo extends JpaRepository<Card, Long> {
 
-//    Card findById(long id);
+    Card findById(long id);
 
 }
