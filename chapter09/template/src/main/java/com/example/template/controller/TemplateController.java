@@ -2,6 +2,7 @@ package com.example.template.controller;
 
 import com.example.template.entity.User;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -46,12 +47,18 @@ public class TemplateController {
         return str;
     }
 
-    // TODO 这里无法传User到这里
-    @RequestMapping(value = "/{id}")
-    public String modify(@PathVariable long id, User user) {
+    // 通过注解@RequestBody获取HttpEntity里的对象
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    public String put(@PathVariable long id, @RequestBody User user) {
         System.out.println(id);
         System.out.println(user);
-        return "modify" + id;
+        return "put" + id;
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public String delete(@PathVariable long id) {
+        System.out.println(id);
+        return "delete" + id;
     }
 
 }

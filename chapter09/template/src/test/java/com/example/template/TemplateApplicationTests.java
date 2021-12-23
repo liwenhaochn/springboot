@@ -104,12 +104,20 @@ class TemplateApplicationTests {
     }
 
     @Test
-    public void modifyTest() {
+    public void putTest() {
         RestTemplate client = restTemplateBuilder.build();
         User user = new User();
+        user.setId(1);
         user.setName("laowu");
+        // HttpEntity Represents an HTTP request or response entity, consisting of headers and body.
+        HttpHeaders httpHeaders = new HttpHeaders();
+        HttpEntity<User> httpEntity = new HttpEntity<>(user, httpHeaders);
+        client.put("http://localhost:8009/{1}", httpEntity, 1);
+    }
 
-        client.put("http://localhost:8009/{1}", user, 1);
+    @Test
+    public void deleteTest() {
+        RestTemplate client = restTemplateBuilder.build();
         client.delete("http://localhost:8009/{1}", 3);
     }
 
